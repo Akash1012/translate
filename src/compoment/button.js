@@ -9,7 +9,7 @@ const Button = () => {
 
     console.log(colorContext)
 
-    const text = contextType === 'english' ? 'Submit' : 'Voorleggen'
+    const text = contextType.lang === 'english' ? 'Submit' : 'Voorleggen'
     return (
         <div>
             <button className={`ui button ${colorContext}`}>{text} </button>

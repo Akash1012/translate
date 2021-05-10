@@ -5,4 +5,17 @@ const LangContext = React.createContext(
     'english'
 )
 
-export default LangContext
+
+export const LangStore = ({ children }) => {
+    const [lang, setLang] = React.useState('english')
+    const langChange = (la) => {
+        setLang(la)
+    }
+    return (
+        <LangContext.Provider value={{ lang, langChange: langChange }}>
+            {children}
+        </LangContext.Provider>
+    )
+}
+
+export default LangContext;

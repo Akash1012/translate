@@ -6,9 +6,9 @@ import LangContext from '../Context/langContext';
 const Field = () => {
     const contextType = React.useContext(LangContext)
 
-    console.log(contextType)
+    // console.log(contextType)
 
-    const text = contextType === 'english' ? 'Name' : 'Naam'
+    const text = contextType.lang === 'english' ? 'Name' : 'Naam'
     return (
         <div className="ui field">
             <label>{text}</label>
