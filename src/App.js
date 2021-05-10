@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import LangContext from './Context/langContext'
+import ColorContext from './Context/colorContext'
 import UserCreate from './compoment/useCreate'
 
 const App = () => {
@@ -16,7 +18,11 @@ const App = () => {
                 <i className="flag in" onClick={() => langChange("english")} />
                 <i className="flag nl" onClick={() => langChange("dutch")} />
             </div>
-            <UserCreate />
+            <LangContext.Provider value={lang}>
+                <ColorContext.Provider value="pink">
+                    <UserCreate />
+                </ColorContext.Provider>
+            </LangContext.Provider>
         </div>
     );
 }

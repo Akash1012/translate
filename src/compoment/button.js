@@ -1,13 +1,18 @@
 import React, { useContext } from 'react';
 
 import LangContext from '../Context/langContext'
+import ColorContext from '../Context/colorContext'
 
 const Button = () => {
     const contextType = useContext(LangContext)
-    console.log(contextType)
+    const colorContext = useContext(ColorContext)
+
+    console.log(colorContext)
+
+    const text = contextType === 'english' ? 'Submit' : 'Voorleggen'
     return (
         <div>
-            <button className="ui button primary">Submit</button>
+            <button className={`ui button ${colorContext}`}>{text} </button>
         </div>
     )
 }
